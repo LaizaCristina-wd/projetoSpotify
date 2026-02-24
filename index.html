@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refatorando Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <main id="music-container">
+     <header>
+        <h4 class="playlist-title">Playlist hashtag</h4>
+        <figure id="cover">
+    <img class="cover" alt="capa do disco"></img>
+         </figure>
+    <audio id="audio" alt="musica"></audio>
+     </header>
+     <section class="below">
+     <div id="song-info">
+       <div class="song-name" id="song-name">Nome da música</div>
+       <div id="band-name" class="light-color">Nome da banda</div>
+      </div>
+        <button id="like" class="button light-color"><i class="bi bi-heart"></i></button>
+     </section>
+    <section class="progress-container" id="progress-container">
+     <div id="progress-bar">
+      <div id="current-progress"></div>
+     </div>
+     <div class="time-box" id="time-box">
+      <div id="song-time">00:00:00</div>
+      <div id="total-time">00:00:00</div>
+    </div>
+    </section>
+    <section id="button-container">
+    <button id="shuffle" class="button"><i class="bi bi-shuffle"></i></button>
+      <button id="previus" class="button button-navigate"><i class="bi bi-skip-start-fill"></i></button>
+      <button id="start" class="button button-higgest"><i class="bi bi-play-circle-fill"></i></button>
+      <button id="next" class="button button-navigate"><i class="bi bi-skip-end-fill"></i></button>
+      <button id="repeat" class="button"><i class="bi bi-repeat"></i></button>
+    </section>
+    </main>
+    <footer>&copy; 2026</footer>
+    <script src="app.js"></script>
+</body>
+</html>
