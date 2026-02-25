@@ -16,7 +16,7 @@ button {
   color:inherit;
   border:none;
 }
-.below {
+#below {
   
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@ button {
     align-items: center;
     margin: 3em 0 1em 0;
 }
-.button-container {
+#button-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -41,46 +41,47 @@ button {
 .button-higgest{
   font-size: 4em;
 }
-.cover img {
+#cover {
   width: 450px;
   height: 450px;
 }
 
-.playlist-title {
+#playlist-title {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 1em 0 4em 0;
 }
-.song-name {
+#song-name {
   font-size: 1.5em;
   font-weight: bolder;
 }
 .light-color{
   color:rgb(139,153,156);
 }
-.progress-bar {
+#progress-bar {
 background-color:rgb(139,153,156);
 height:3px;
 width:100%;
 border-radius: 15px;
 }
-.current-progress {
+#current-progress {
   --progress:0%;
   background-color:rgb(255,255,255);
   height:inherit;
   width:var(--progress);
   border-radius: inherit;
 }
-.progress-container {
+#progress-container {
   cursor: pointer;
 }
 .button-active {
   color: rgb(0, 183, 107);
 }
-.time-box {
+#time-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: smaller;
-  margin-top: 0.5em;}
+  margin-top: 0.5em;
+}

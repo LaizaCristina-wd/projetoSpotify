@@ -1,47 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refatorando Spotify</title>
+    <title>Refatorando o Spotify</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
 </head>
+
 <body>
-    <main id="music-container">
-     <header>
-        <h4 class="playlist-title">Playlist hashtag</h4>
-        <figure id="cover">
-    <img class="cover" alt="capa do disco"></img>
-         </figure>
-    <audio id="audio" alt="musica"></audio>
-     </header>
-     <section class="below">
-     <div id="song-info">
-       <div class="song-name" id="song-name">Nome da música</div>
-       <div id="band-name" class="light-color">Nome da banda</div>
+
+  <main class="music-container">
+
+    <header>
+      <h4 id="playlist-title">Playlist hashtag</h4>
+    </header>
+
+    <section>
+      <img id="cover" alt="Capa do disco">
+      <audio id="audio"></audio>
+    </section>
+
+    <section id="below">
+      <div id="song-info">
+        <p id="song-name">Nome da música</p>
+        <p id="band-name" class="light-color">Nome da banda</p>
       </div>
-        <button id="like" class="button light-color"><i class="bi bi-heart"></i></button>
-     </section>
-    <section class="progress-container" id="progress-container">
-     <div id="progress-bar">
-      <div id="current-progress"></div>
-     </div>
-     <div class="time-box" id="time-box">
-      <div id="song-time">00:00:00</div>
-      <div id="total-time">00:00:00</div>
-    </div>
+
+      <button id="like" class="button light-color" aria-label="Curtir música">
+        <i class="bi bi-heart"></i>
+      </button>
     </section>
-    <section id="button-container">
-    <button id="shuffle" class="button"><i class="bi bi-shuffle"></i></button>
-      <button id="previus" class="button button-navigate"><i class="bi bi-skip-start-fill"></i></button>
-      <button id="start" class="button button-higgest"><i class="bi bi-play-circle-fill"></i></button>
-      <button id="next" class="button button-navigate"><i class="bi bi-skip-end-fill"></i></button>
-      <button id="repeat" class="button"><i class="bi bi-repeat"></i></button>
+
+    <section id="progress-container">
+      <div id="progress-bar">
+        <div id="current-progress"></div>
+      </div>
+
+      <div id="time-box">
+        <span id="song-time">00:00:00</span>
+        <span id="total-time">00:00:00</span>
+      </div>
     </section>
-    </main>
-    <footer>&copy; 2026</footer>
-    <script src="app.js"></script>
+
+    <footer id="button-container">
+      <button id="shuffle" class="button" aria-label="Modo aleatório">
+        <i class="bi bi-shuffle"></i>
+      </button>
+
+      <button id="previus" class="button button-navigate" aria-label="Música anterior">
+        <i class="bi bi-skip-start-fill"></i>
+      </button>
+
+      <button id="start" class="button button-higgest" aria-label="Reproduzir">
+        <i class="bi bi-play-circle-fill"></i>
+      </button>
+
+      <button id="next" class="button button-navigate" aria-label="Próxima música">
+        <i class="bi bi-skip-end-fill"></i>
+      </button>
+
+      <button id="repeat" class="button" aria-label="Repetir música">
+        <i class="bi bi-repeat"></i>
+      </button>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
