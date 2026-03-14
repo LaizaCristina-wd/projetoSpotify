@@ -4,7 +4,7 @@ const song = document.getElementById("audio");
 const cover = document.getElementById("cover");
 const start = document.getElementById("start");
 const next = document.getElementById("next");
-const previus = document.getElementById("previus");
+const previous = document.getElementById("previous");
 const likeButton = document.getElementById("like");
 const currentProgress = document.getElementById("current-progress");
 const progressContainer = document.getElementById("progress-container");
@@ -35,7 +35,7 @@ const givenUp = {
 let isPlaying = false;
 let isShuffled = false;
 let repeatOn = false;
-const originalPlaylist = JSON.parse(localStorage.getItem("playlist")) ??[sledGehammer, depecheMode, givenUp];
+const originalPlaylist = JSON.parse(localStorage.getItem("playlist")) ?? [sledGehammer, depecheMode, givenUp];
 let sortedPlaylist = [...originalPlaylist];
 let index = 0;
 
@@ -59,7 +59,7 @@ function playPauseDecider(){
         songStart();
     }
 }
-function likebuttonRender(){
+function likeButtonRender(){
     if(sortedPlaylist[index].liked === true){
     likeButton.querySelector(".bi").classList.remove("bi-heart");
     likeButton.querySelector(".bi").classList.add("bi-heart-fill");
@@ -77,8 +77,9 @@ function initializeSong(){
     song.src = `songs/${sortedPlaylist[index].file}.mp3`;
     songName.innerText=sortedPlaylist[index].songName;
     bandName.innerText=sortedPlaylist[index].artist;
+    likeButtonRender();  //estava sem essa função
 }
-function previusSong(){
+function previousSong(){
     if(index === 0){
         index = sortedPlaylist.length - 1;
     }
@@ -86,7 +87,7 @@ function previusSong(){
         index -= 1;
     }
     initializeSong();
-    playsong();
+    songStart();   //estava com nome errado
 }
 
 function nextSong(){
@@ -97,7 +98,7 @@ function nextSong(){
         index += 1;
     }
     initializeSong();
-    playsong();
+    songStart();
 }
 function updateProgress(){
     const barWidth = (song.currentTime/song.duration)*100;
@@ -171,14 +172,14 @@ function likedButtonCLicked(){
     else{
         sortedPlaylist[index].liked = false;
     }
-    likebuttonRender();
+    likeButtonRender();
     localStorage.setItem("playlist", JSON.stringify(originalPlaylist));
 }
 
 initializeSong();
 
 start.addEventListener("click", playPauseDecider);
-previus.addEventListener("click", previusSong);
+previous.addEventListener("click", previousSong);
 next.addEventListener("click", nextSong);
 song.addEventListener("timeupdate", updateProgress);
 song.addEventListener("ended", nextOrRepeat);
